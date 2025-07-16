@@ -1,0 +1,157 @@
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+.settings {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #e8f0f2;
+  border-radius: 8px;
+}
+
+select, .button {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+
+select {
+  background-color: #fff;
+  min-width: 180px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.button.primary {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.button.primary:hover {
+  background-color: #218838;
+}
+
+.button.secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.button.secondary:hover {
+  background-color: #5a6268;
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+#interview-section {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.chat-box {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.ai-message {
+  background-color: #e9f7fe;
+  color: #0056b3;
+}
+
+.user-message {
+  background-color: #e6ffe6;
+  color: #28a745;
+  text-align: right;
+}
+
+.ai-feedback {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  font-style: italic;
+  font-size: 0.95em;
+}
+
+.message .role {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.status {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
