@@ -22,7 +22,7 @@ let isMicActive = false; // マイクがアクティブかどうか
 // !!! 重要 !!!
 // デプロイ後、このURLをVercelでデプロイされたバックエンドのURLに置き換える必要があります。
 // 例: 'https://your-backend-app-xxxx.vercel.app/api/get-feedback'
-const BACKEND_API_URL = 'http://localhost:3000/api/get-feedback'; // ★現時点ではローカルテスト用
+const BACKEND_API_URL = 'https://ai-interview-backend-koht.vercel.app/api/get-feedback'; // ★現時点ではローカルテスト用
 
 // --- 初期化処理 ---
 document.addEventListener('DOMContentLoaded', async () => {
