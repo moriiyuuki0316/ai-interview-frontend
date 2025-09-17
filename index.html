@@ -5,41 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI面接シミュレーター</title>
   <link rel="stylesheet" href="style.css">
-  <link href="" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <h1>AI面接シミュレーター</h1>
 
-    <div class="settings">
-      <label for="category-select">質問カテゴリ：</label>
-      <select id="category-select">
-        </select>
-      <button id="start-interview-btn" class="button primary">面接開始</button>
+    <!-- 初期開始画面 -->
+    <div id="initial-start-section" class="settings">
+      <button id="overall-start-btn" class="button primary">面接を開始する</button>
+      <p class="status">クリックすると面接が始まります。</p>
     </div>
 
+    <!-- 面接セクション -->
     <div id="interview-section" class="hidden">
       <div class="chat-box">
         <div class="message ai-message">
-          <span class="role">AI面接官:</span> <span id="question-display">面接を開始します。</span>
+          <span class="role">🤖 AI面接官:</span> <span id="question-display">面接を開始します。</span>
         </div>
         <div class="message user-message">
-          <span class="role">あなた:</span> <span id="user-answer-display"></span>
+          <span class="role">🧑‍💼 あなた:</span> <span id="user-answer-display"></span>
         </div>
         <div class="message ai-feedback">
-          <span class="role">AIフィードバック:</span> <span id="feedback-display"></span>
+          <span class="role">💡 AIフィードバック:</span> <span id="feedback-display"></span>
         </div>
       </div>
 
       <div class="controls">
         <button id="mic-toggle-btn" class="button">🎙️ 回答する</button>
         <button id="next-question-btn" class="button">次の質問へ</button>
-        <button id="reset-interview-btn" class="button secondary">面接をリセット</button>
+        <button id="reset-interview-btn" class="button secondary">面接を終了してリセット</button>
       </div>
 
       <p id="status-message" class="status"></p>
     </div>
 
+    <!-- エラーメッセージ -->
     <div id="error-message" class="error hidden"></div>
   </div>
 
