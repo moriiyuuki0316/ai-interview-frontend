@@ -1,8 +1,11 @@
+/* ==============================
+   全体レイアウト
+============================== */
 body {
   font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
-  padding: 20px;
-  background-color: #f4f7f6;
+  padding: 0;
+  background: linear-gradient(135deg, #eef5f9 0%, #d9ecf2 100%);
   color: #333;
   line-height: 1.6;
   display: flex;
@@ -11,125 +14,179 @@ body {
   min-height: 100vh;
 }
 
+/* ==============================
+   コンテナ
+============================== */
 .container {
   background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  padding: 35px;
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
   box-sizing: border-box;
+  margin: 30px 15px;
+  animation: fadeIn 0.8s ease-out;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==============================
+   タイトル
+============================== */
 h1 {
   text-align: center;
   color: #2c3e50;
   margin-bottom: 30px;
-  font-size: 2.2em;
+  font-size: 2.4em;
   font-weight: 700;
+  position: relative;
+}
+h1::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border-radius: 2px;
 }
 
-.settings {
+/* ==============================
+   設定セクション
+============================== */
+#initial-start-section {
   text-align: center;
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: #e8f0f2;
-  border-radius: 8px;
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #f8fcfd;
+  border-radius: 10px;
+  border: 1px solid #e0f2f7;
 }
 
-select, .button {
-  padding: 10px 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+/* ==============================
+   ボタン
+============================== */
+.button {
+  padding: 12px 22px;
+  border-radius: 8px;
   font-size: 1em;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 5px;
-}
-
-select {
-  background-color: #fff;
-  min-width: 180px;
-}
-
-.button {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
+  margin: 8px;
+  border: none;
 }
 
 .button:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* プライマリ */
 .button.primary {
-  background-color: #28a745;
-  border-color: #28a745;
+  background: linear-gradient(45deg, #4CAF50, #2E8B57);
+  color: white;
 }
 .button.primary:hover {
-  background-color: #218838;
+  background: linear-gradient(45deg, #388E3C, #256E41);
 }
 
+/* 通常 */
+.button.default {
+  background-color: #007bff;
+  color: white;
+}
+.button.default:hover {
+  background-color: #0056b3;
+}
+
+/* セカンダリ */
 .button.secondary {
   background-color: #6c757d;
-  border-color: #6c757d;
+  color: white;
 }
 .button.secondary:hover {
   background-color: #5a6268;
 }
 
+/* 無効 */
 .button:disabled {
-  background-color: #cccccc;
+  background-color: #ccc;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
+/* ==============================
+   面接セクション
+============================== */
 #interview-section {
-  border-top: 1px solid #eee;
-  padding-top: 20px;
-  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 25px;
+  margin-top: 25px;
 }
 
+/* ==============================
+   チャットボックス
+============================== */
 .chat-box {
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  background-color: #fafafa;
+  border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
   max-height: 500px;
   overflow-y: auto;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
+/* ==============================
+   メッセージ
+============================== */
 .message {
-  margin-bottom: 15px;
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  max-width: 85%;
 }
 
+/* AI */
 .ai-message {
-  background-color: #e9f7fe;
-  color: #0056b3;
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  border-left: 4px solid #2196f3;
+  align-self: flex-start;
 }
 
+/* User */
 .user-message {
-  background-color: #e6ffe6;
-  color: #28a745;
-  text-align: right;
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  align-self: flex-end;
 }
 
+/* Feedback */
 .ai-feedback {
-  background-color: #fff3cd;
-  color: #856404;
-  border: 1px solid #ffeeba;
-  font-style: italic;
+  background-color: #fff8e1;
+  color: #e65100;
+  border: 1px dashed #ffb300;
   font-size: 0.95em;
+  padding: 12px 18px;
+  align-self: flex-start;
 }
 
-.message .role {
-  font-weight: bold;
-  margin-right: 5px;
-}
-
+/* ==============================
+   その他
+============================== */
 .controls {
   text-align: center;
   margin-top: 20px;
@@ -139,17 +196,18 @@ select {
   text-align: center;
   margin-top: 15px;
   font-size: 0.9em;
-  color: #666;
+  color: #555;
 }
 
 .error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
+  background-color: #ffebee;
+  color: #b71c1c;
+  border: 1px solid #ef9a9a;
   padding: 15px;
   border-radius: 8px;
   text-align: center;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 .hidden {
